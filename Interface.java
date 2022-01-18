@@ -1,9 +1,14 @@
 import java.time.LocalDateTime;  
-import java.time.format.DateTimeFormatter;  
-public class Interface {
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;  
 
+public class Interface {
+	private static PlantTracker plantTracker = new PlantTracker();
+	private static Scanner input = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		java.util.Date date = new java.util.Date();
+		
 		
 		System.out.println("+-+-+-Welcome to PlantTracker!-+-+-+");
 		System.out.println("It is now " + date);
@@ -28,9 +33,9 @@ public class Interface {
 
 	private static void processOption(int choice) {
 		switch(choice) {
-		case 1: System.out.println("Viewing Plants");
+		case 1: viewPlants();
 				break;
-		case 2: System.out.println("Adding Plants");
+		case 2: addPlants();
 				break;
 		case 3: System.out.println("Showing Credits");
 				break;
@@ -38,6 +43,33 @@ public class Interface {
 		
 	}
 	
+	private static void viewPlants() {
+		System.out.println("\n+-+-+-Viewing Plants-+-+-+");
+		String[] plants = plantTracker.getPlantInfo();
+		if (plants != null) {
+			for (int i = 0; i < plants.length; i++) {
+				System.out.println(plants[i]);
+			}	
+		} else {
+			System.out.println("You currently have no plants listed");
+		}
+	}
 	
+	private static void addPlants() {
+		System.out.println("\n+-+-+-Adding a Plant-+-+-+");
+		System.out.println("Name: ");
+		String name = input.nextLine();
+		System.out.println("Latin Name: ");
+		String latinName = input.nextLine();
+		System.out.println("Date: ");
+		String date = input.nextLine();
+		System.out.println("Care: ");
+		String care = input.nextLine();
+		if (plantTracker.addPlants(name, latinName, date, care)) {
+			System.out.println("This plant has been added to your list");
+		} else {
+			System.out.println("Unfortunately there was an error. Please try again");
+		}
+	}
 
 }
