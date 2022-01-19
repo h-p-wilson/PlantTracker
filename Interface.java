@@ -37,7 +37,7 @@ public class Interface {
 				break;
 		case 2: addPlants();
 				break;
-		case 3: System.out.println("Showing Credits");
+		case 3: viewCredits();
 				break;
 		}
 		
@@ -45,12 +45,14 @@ public class Interface {
 	
 	private static void viewPlants() {
 		System.out.println("\n+-+-+-Viewing Plants-+-+-+");
-		String[] plants = plantTracker.getPlantInfo();
+		String[] plants = plantTracker.getPlantList();
 		if (plants != null) {
-			for (int i = 0; i < plants.length; i++) {
-				System.out.println(plants[i]);
-			}	
-		} else {
+			Menu menu = new Menu("Choose a plant to view", plants);
+			int quitOption = plants.length;
+			boolean done = false;
+			int choice;
+			choice = menu.getUserChoice();
+			
 			System.out.println("You currently have no plants listed");
 		}
 	}
@@ -72,4 +74,8 @@ public class Interface {
 		}
 	}
 
+	private static void viewCredits() {
+		System.out.println("\n+-+-+-Credits-+-+-+");
+		System.out.println("It was all me!!!!!");
+	}
 }
