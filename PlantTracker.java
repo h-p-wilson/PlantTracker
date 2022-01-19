@@ -16,12 +16,12 @@ public class PlantTracker {
 		return false;
 	}
 	
-	public String[] getPlantInfo() {
+	public String[] getPlantList() {
 		if (plants.size()>0 ) {
 			String plantList[] = new String[plants.size()];
 			for (int i = 0; i < plantList.length; i++) {
 				Plant plant = plants.get(i);
-				String str = plant.toString();
+				String str = plant.getName();
 				plantList[i] = str;
 			}
 			return plantList;
