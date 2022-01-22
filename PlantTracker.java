@@ -30,9 +30,14 @@ public class PlantTracker {
 		}
 	}
 	
-	public String getPlant(int choice) {
+	public String getPlantString(int choice) {
 		Plant plantObj = plants.get(choice-1);
 		String plant = plantObj.toString();
+		return plant;
+	}
+	
+	public Plant getPlant(int choice) {
+		Plant plant = plants.get(choice-1);
 		return plant;
 	}
 	
