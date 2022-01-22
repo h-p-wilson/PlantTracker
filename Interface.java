@@ -7,7 +7,10 @@ public class Interface {
 	private static Scanner input = new Scanner(System.in);
 	private static java.util.Date date = new java.util.Date();
 	
-	public static void main(String[] args) {		
+	public static void main(String[] args) {	
+		//Reading old plant data
+
+
 		System.out.println("+-+-+-Welcome to PlantTracker!-+-+-+");
 		System.out.println("It is now " + date);
 		
@@ -26,6 +29,7 @@ public class Interface {
 			}
 		} while (!done);
 		System.out.println("Thank you for using PlantTracker!");
+		//Will save the data here for next time
 	
 	}
 
@@ -55,7 +59,7 @@ public class Interface {
 			Menu menu1 = new Menu("Would you like to water this plant?", options);
 			int choice1 = menu1.getUserChoice();
 			if  (choice1 == 1) {
-				plantTracker.getPlant(choice1).setWatered(date);
+				plantTracker.getPlant(choice).setWatered(date);
 				System.out.println("This Plant has been Watered");
 			}
 			
