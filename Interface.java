@@ -52,7 +52,9 @@ public class Interface {
 			boolean done = false;
 			int choice;
 			choice = menu.getUserChoice();
+			System.out.println(plantTracker.getPlant(choice));
 			
+		} else {
 			System.out.println("You currently have no plants listed");
 		}
 	}
