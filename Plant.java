@@ -31,7 +31,7 @@ public class Plant {
 		details += "Latin Name: " + this.latinName + "\n";
 		details += "Date Aquired: " + this.date + "\n";
 		details += "Care Required: " + this.care + "\n";
-		details += "Date Last Watered: " + this.dateWatered;
+		details += "Date Last Watered: " + this.dateWatered + "\n";
 		return details;
 	}
 	
