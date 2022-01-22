@@ -1,10 +1,11 @@
+import java.util.Date;
 
 public class Plant {
 	private String name;		//common name
 	private String latinName;	//latin name
 	private String date;		//date acquired
 	private String care;		//details for care
-	private String dateWatered;	//date watered
+	private Date dateWatered;	//date watered
 	
 	/**
 	 * Constructor for Plant
@@ -18,7 +19,7 @@ public class Plant {
 		this.latinName = latinName;
 		this.date = date;
 		this.care = care;
-		this.dateWatered = "Info unavailable";
+		this.dateWatered = null;
 	}
 	
 	/**
@@ -55,12 +56,12 @@ public class Plant {
 	}
 	
 	//getter for dateWatered
-	public String getWatered() {
+	public Date getWatered() {
 		return this.dateWatered;
 	}
 	
 	//setter for dateWatered
-	public void setWatered(String dateWatered) {
-		this.dateWatered = dateWatered;
+	public void setWatered(Date date2) {
+		this.dateWatered = date2;
 	}
 }
