@@ -5,11 +5,9 @@ import java.util.Scanner;
 public class Interface {
 	private static PlantTracker plantTracker = new PlantTracker();
 	private static Scanner input = new Scanner(System.in);
+	private static java.util.Date date = new java.util.Date();
 	
-	public static void main(String[] args) {
-		java.util.Date date = new java.util.Date();
-		
-		
+	public static void main(String[] args) {		
 		System.out.println("+-+-+-Welcome to PlantTracker!-+-+-+");
 		System.out.println("It is now " + date);
 		
@@ -52,7 +50,14 @@ public class Interface {
 			boolean done = false;
 			int choice;
 			choice = menu.getUserChoice();
-			System.out.println(plantTracker.getPlant(choice));
+			System.out.println(plantTracker.getPlantString(choice));
+			String[] options = {"Yes", "No"};
+			Menu menu1 = new Menu("Would you like to water this plant?", options);
+			int choice1 = menu1.getUserChoice();
+			if  (choice1 == 1) {
+				plantTracker.getPlant(choice1).setWatered(date);
+				System.out.println("This Plant has been Watered");
+			}
 			
 		} else {
 			System.out.println("You currently have no plants listed");
