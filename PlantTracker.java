@@ -1,4 +1,7 @@
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class PlantTracker {
 	private static ArrayList<Plant> plants;
@@ -6,6 +9,7 @@ public class PlantTracker {
 	public PlantTracker(){ 
 		plants= new ArrayList<Plant>();
 	}
+	
 	
 	public boolean addPlants(String name, String latinName, String date, String care) {
 		if (name != null && latinName != null && date != null && care != null) {
@@ -40,5 +44,7 @@ public class PlantTracker {
 		Plant plant = plants.get(choice-1);
 		return plant;
 	}
+	
+	
 	
 }
